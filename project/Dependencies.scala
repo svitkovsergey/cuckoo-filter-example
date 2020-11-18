@@ -18,18 +18,20 @@ object Dependencies {
   val circeGeneric = "io.circe" %% "circe-generic" % CirceVersion
   val logback = "ch.qos.logback" % "logback-classic" % LogbackVersion
   val catsCore = "org.typelevel" %% "cats-core" % CatsCoreVersion
-  val circeCore = "io.circe" % "circe-core_2.13" % CirceVersion
-  val circeParser = "io.circe" % "circe-parser_2.13" % CirceVersion
+  val circeCore = "io.circe" % "circe-core_2.12" % CirceVersion
+  val circeParser = "io.circe" % "circe-parser_2.12" % CirceVersion
+  val picoCuckooFilter = "com.github.oskin1" %% "scakoo" % "0.4.1"
 
   lazy val compileDependencies = Seq(
-      catsCore, circeCore, circeParser, http4sBlazeClient, http4sBlazeServer, http4sCirce, http4sDSL, circeGeneric, logback
+      catsCore, circeCore, circeParser, http4sBlazeClient, http4sBlazeServer, http4sCirce, http4sDSL, circeGeneric, logback,
+      picoCuckooFilter
     )
 
-  val scalatestCore = "org.scalatest" % "scalatest-core_2.13" % "3.2.0-M4" % Test
+  val scalatestCore = "org.scalatest" % "scalatest-core" % "3.2.0-M4" % Test
   // https://mvnrepository.com/artifact/org.scalatest/scalatest-flatspec
-  val scalatestFlatspec = "org.scalatest" % "scalatest-flatspec_2.13" % "3.2.0-M4" % Test
+  val scalatestFlatspec = "org.scalatest" % "scalatest-flatspec" % "3.2.0-M4" % Test
   // https://mvnrepository.com/artifact/org.scalatest/scalatest-matchers-core
-  val scalatestMatchers = "org.scalatest" % "scalatest-matchers-core_2.13" % "3.2.0-M4" % Test
+  val scalatestMatchers = "org.scalatest" % "scalatest-matchers-core" % "3.2.0-M4" % Test
 
   lazy val testDependencies =
     Seq(scalatestCore, scalatestFlatspec, scalatestMatchers)
