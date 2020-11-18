@@ -13,5 +13,7 @@ lazy val root = (project in file("."))
     scalacOptions ++= Seq(
       "-language:higherKinds"
     ),
-    dockerExposedPorts := Seq(8080)
+    dockerExposedPorts := Seq(8080),
+    fork in run := true,
+    javaOptions += "-Xmx2G"
   ).enablePlugins(JavaAppPackaging)
